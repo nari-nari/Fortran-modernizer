@@ -1,0 +1,42 @@
+Project purpose
+
+This repository migrates a legacy Fortran numerical-analysis codebase originally developed with Absoft Pro Fortran to Python.
+
+The project should:
+
+- first establish a reproducible gfortran build;
+- identify and resolve important latent defects;
+- perform only the Fortran refactoring needed for safe Python migration;
+- verify numerical equivalence during migration;
+- retain computational performance as far as practical;
+- extract reusable tools and Agent Skills for other legacy Fortran projects.
+
+Core principles
+
+- Numerical correctness has priority over code cleanliness.
+- Legacy output is a characterization baseline, not necessarily the correct answer.
+- Investigate suspected defects before fixing them.
+- Prefer small, independently testable changes.
+- Do not mix compiler migration, defect fixing, refactoring, Python migration, and optimization unnecessarily.
+- Do not pursue complete Modern Fortran conversion unless required for Python migration.
+- Avoid premature abstraction and generalization.
+- Generalize workflows only after they have demonstrated reuse value.
+
+Migration order
+
+Absoft Fortran
+→ gfortran
+→ defect resolution
+→ minimum Python-readiness refactoring
+→ Python migration
+→ numerical parity
+→ performance optimization.
+
+Reusable artifacts
+
+Prefer:
+
+- deterministic scripts for mechanical analysis/transformation;
+- tests for verification;
+- Agent Skills for repeatable workflows requiring judgment;
+- project documentation for application-specific knowledge.
